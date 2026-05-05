@@ -12,4 +12,17 @@
 #ifndef MENU_H
 #define MENU_H
 
+/**
+ * @brief Funcion para inicializar el menu de usuario
+ * 
+ */
+void menuInit(void);
+
+/**
+ * @brief 
+ * 
+ * @param letter 
+ */
+void menuUpdate(char letter);
+
 #endif // MENU_H

@@ -14,6 +14,9 @@
 
 int main()
 {
+    //TEST
+    menuInit();
+    menuUpdate('a');
 
     return 0;
 }
