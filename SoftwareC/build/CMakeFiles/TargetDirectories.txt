@@ -1,3 +1,0 @@
-C:/Repositorios/GenericEmbeddedSystem/SoftwareC/build/CMakeFiles/GES.dir
-C:/Repositorios/GenericEmbeddedSystem/SoftwareC/build/CMakeFiles/edit_cache.dir
-C:/Repositorios/GenericEmbeddedSystem/SoftwareC/build/CMakeFiles/rebuild_cache.dir

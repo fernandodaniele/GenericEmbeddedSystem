@@ -12,18 +12,6 @@
 #include <stdlib.h>
 #include "../inc/menu.h"
 
-/**
- * @brief Para test
- * 
- * @return int 
- */
-void menuInit(){
-    printf( "Inicio");
-}
-void menuUpdate(char a){
-    printf( "Letra: %c ", a);
-}
-
 int main(){
     char letter = ' ';
     //Seccion de configuracion/inicializacion
