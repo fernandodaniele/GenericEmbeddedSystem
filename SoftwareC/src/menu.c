@@ -9,3 +9,11 @@
  * 
  */
 #include "../inc/menu.h"
+
+void menuInit(void){
+    //Esta es la sección de configuración
+}
+
+void menuUpdate(char letter){
+    //La letra presionada fue
+}

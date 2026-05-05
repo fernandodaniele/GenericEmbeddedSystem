@@ -1,0 +1,14 @@
+[
+{
+  "directory": "C:/Repositorios/GenericEmbeddedSystem/SoftwareC/build",
+  "command": "C:/MinGW/bin/gcc.exe  @CMakeFiles/GES.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles/GES.dir/src/main.c.obj -c C:/Repositorios/GenericEmbeddedSystem/SoftwareC/src/main.c",
+  "file": "C:/Repositorios/GenericEmbeddedSystem/SoftwareC/src/main.c",
+  "output": "CMakeFiles/GES.dir/src/main.c.obj"
+},
+{
+  "directory": "C:/Repositorios/GenericEmbeddedSystem/SoftwareC/build",
+  "command": "C:/MinGW/bin/gcc.exe  @CMakeFiles/GES.dir/includes_C.rsp -g -std=gnu11 -o CMakeFiles/GES.dir/src/menu.c.obj -c C:/Repositorios/GenericEmbeddedSystem/SoftwareC/src/menu.c",
+  "file": "C:/Repositorios/GenericEmbeddedSystem/SoftwareC/src/menu.c",
+  "output": "CMakeFiles/GES.dir/src/menu.c.obj"
+}
+]

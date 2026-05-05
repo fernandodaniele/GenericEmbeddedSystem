@@ -10,8 +10,8 @@
 
  
 9- A partir de acá, crear ramas por cada desarrollador:
-•	Dev-1: deberá crear en el archivo main.c un superloop. En la sección de configuración, llamar a la función void IniciarMenu(void). En el bucle infinito, leer la entrada de teclado, si se presiona Escape, salir del programa, si se presiona otra tecla pasar el carácter correspondiente como parámetro a la función void ActualizarMenu(char);
-•	Dev-2: deberá crear los prototipos de void IniciarMenu(void) y void ActualizarMenu(char) en menu.h y definir dichas funciones en menu.c. IniciarMenu debe mostrar un mensaje que diga “Esta es la sección de configuración” y ActualizarMenu(char) debe mostrar un mensaje que diga “La letra presionada fue” y mostrar la letra recibida como parámetro.
+•	Dev-1: deberá crear en el archivo main.c un superloop. En la sección de configuración, llamar a la función void menuInit(void). En el bucle infinito, leer la entrada de teclado, si se presiona Escape, salir del programa, si se presiona otra tecla pasar el carácter correspondiente como parámetro a la función void menuUpdate(char);
+•	Dev-2: deberá crear los prototipos de void menuInit(void) y void menuUpdate(char) en menu.h y definir dichas funciones en menu.c. menuInit debe mostrar un mensaje que diga “Esta es la sección de configuración” y menuUpdate(char) debe mostrar un mensaje que diga “La letra presionada fue” y mostrar la letra recibida como parámetro.
 •	Dev-3: Asegurarse de que estamos en la rama Dev-3. Cerrar carpeta si estamos dentro de VSC. Crear proyecto con PlatformIO para el ESP32-S3, llamarlo Firmware y guardarlo dentro de la carpeta del proyecto.
    
 9- Una vez finalizada su parte, cada desarrollador deberá realizar commit (poner como mensaje ProjectStart-Dev1 2 o 3 según corresponda) e integrar sus cambios en la rama main mediante PULL REQUEST
