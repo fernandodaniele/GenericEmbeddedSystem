@@ -10,23 +10,31 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 #include "../inc/menu.h"
+#include "../inc/rs232.h"
 
-int main(){
+int main(void) {
     char letter = ' ';
-    //Seccion de configuracion/inicializacion
+    int key = 0;
+
+    // Seccion de configuracion/inicializacion
     menuInit();
 
-    //Loop infinito
-    while(1)
-    {
-        //Leer entrada de teclado
+    // Loop infinito
+    while (1) {
+        //falta agregar un printf
+        key = _getch();
+        if (key == 27) {
+            // Si se presiona Escape, salir del programa
+            break;
+        }
 
-        //si se presiona Escape
-        //salir del programa (break)
-        
-        //si se presiona otra tecla
-        //pasar el carácter correspondiente como parámetro a la función void menuUpdate(char);
+        if (key == EOF) {
+            continue;
+        }
+        letter = (char)key;
+        // Pasar el carácter correspondiente como parámetro a la función void menuUpdate(char)
         menuUpdate(letter);
     }
 

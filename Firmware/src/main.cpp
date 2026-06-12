@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include "menu.h"
 #include "keypad.h"
+#include "uart.h"
+#include "user.h"
 
 void setup() {
     keypadInit();
