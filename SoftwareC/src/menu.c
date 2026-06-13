@@ -10,7 +10,9 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <Windows.h>
 #include "../inc/menu.h"
+#include "../inc/serial.h"
 
 static void showMainMenu(void);
 static void showSensorMenu(void);
@@ -84,9 +86,27 @@ void menuUpdate(char inputChar){
             switch (option) {
                 case 1: {
                     printf("Encendiendo LED...\n");
+                    if(sendCommand('E')){
+                        printf("Error enviando comando\n");
+                        break;
+                    }
+                    Sleep(1000);
+                    if(readResponse()){
+                        printf("Error leyendo respuesta\n");
+                        break;
+                    }
                 } break;
                 case 2: {
                     printf("Apagando LED...\n");
+                    if(sendCommand('A')){
+                        printf("Error enviando comando\n");
+                        break;
+                    }
+                    Sleep(1000);
+                    if(readResponse()){
+                        printf("Error leyendo respuesta\n");
+                        break;
+                    }
                 } break;
                 case 0: {
                     printf("Volviendo al menú principal...\n");

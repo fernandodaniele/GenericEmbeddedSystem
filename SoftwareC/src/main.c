@@ -12,11 +12,15 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "../inc/menu.h"
+#include "../inc/serial.h"
+
+#define PORT_COM    6-1
 
 int main(void) {
     char letter = ' ';
     int key = 0;
 
+    serialInit(PORT_COM);
     // Seccion de configuracion/inicializacion
     menuInit();
 
