@@ -12,7 +12,6 @@
 #include <stdlib.h>
 #include <conio.h>
 #include "../inc/menu.h"
-#include "../inc/rs232.h"
 
 int main(void) {
     char letter = ' ';
