@@ -1,0 +1,18 @@
+Objetivo:
+Vamos a realizar la medición de un sensor analógico conectado al ADC
+y producir una variación proporcional en la salida PWM o DAC según preferencia.
+Cada desarrollador deberá seleccionar un sensor y controlar su respectivo actuador.
+Además, deberá calcular el valor correspondiente según la magnitud física medida y
+enviarlo por puerto serie (UART) cuando llegue el comando especificado.
+Ejemplos:
+•	Potenciómetro que regule el brillo de un LED, la velocidad de un motor o ventilador.
+•	LDR que regule el brillo de un LED.
+•	Sensor de temperatura que regule la velocidad de un ventilador.
+•	Medir Corriente, Resistencia, Tensión, capacitancia.
+
+Procedimiento:
+A partir de la última versión de la rama develop actualizada,
+cada desarrollador actualizar su rama Dev1 – Dev2 según corresponda para partir todos
+del mismo punto. Una vez en cada rama de desarrollador, debe agregar los archivos .c y .h
+para el manejo del sensor y actuador según corresponda.
+Ademas, deberá modificar la parte de UART/Serie tanto del Software y Firmware, para permitir solicitar el valor del sensor desde la PC y enviarlo desde el microcontrolador. Una vez hechos los cambios, integrar en la rama develop, prestando atención a los posibles conflictos que puedan surgir (ya que ambos desarrolladores modificaron posiblemente los mismo archivos)
