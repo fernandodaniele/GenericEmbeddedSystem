@@ -1,6 +1,6 @@
 //================== Inclusiones =============================
 #include "../include/uart.h"
-#include "../include/temperature.h"
+#include "../include/voltage.h"
 
 //================== Definiciones =============================
 #define LED LED_BUILTIN
@@ -37,7 +37,7 @@ void uartReadCommand(){
         }
         else
         {
-            Serial.print("Comando no reconocido");
+            Serial.print("Command not recognized");
         }
     }
 }
