@@ -46,8 +46,8 @@ void menuUpdate(char inputChar){
                     currentScreen = LED_MENU;
                 } break;
                 case 3: {
-                    printf("Menú de Usuarios\n");
-                    currentScreen = USER_MENU;
+                    printf("Menú de sensor\n");
+                    currentScreen = SENSOR_MENU;
                 } break;
                 case 0: {
                     currentScreen = MAIN_MENU;
@@ -66,7 +66,10 @@ void menuUpdate(char inputChar){
             }
             switch (option) {
                 case 1: {
-                    printf("Leyendo sensor de temperatura...\n");
+                    printf("Leyendo voltaje...\n");
+                    sendCommand('V');
+                    Sleep(1000);
+                    
                 } break;
                 case 0: {
                     printf("Volviendo al menú principal...\n");
@@ -160,7 +163,7 @@ static void showMainMenu(void) {
 
 static void showSensorMenu(void) {
     printf("\n--- Menú de Sensores ---\n");
-    printf("1 - Leer sensor de temperatura\n");
+    printf("1 - Leer voltaje\n");
     printf("0 - Volver al menú principal\n");
     printf("Seleccione una opción: ");
 }

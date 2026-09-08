@@ -10,7 +10,6 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
-#include <conio.h>
 #include "../inc/menu.h"
 #include "../inc/serial.h"
 

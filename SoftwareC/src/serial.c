@@ -1,5 +1,4 @@
 //================== Inclusiones ==========================
-#include <Windows.h>
 #include "../inc/serial.h"
 #include "../inc/rs232.h"
 
@@ -7,12 +6,12 @@
 #define LONG_BUFFER 4096
 
 //================== Configuraciones ==========================
-int COMPort=3;             //Número de puerto. 6 es para el COM7 en windows
-int bauds=115200;            //Velocidad en baudios
-char mode[]={'8','N','1',0}; // 8 bits de datos, no paridad, 1 bit de parada
+int COMPort=3;             // Numero de puerto. 6 corresponde al COM7 en Windows.
+int bauds=115200;            // Velocidad en baudios.
+char mode[]={'8','N','1',0}; // 8 bits de datos, sin paridad y 1 bit de parada.
 
-unsigned char bufferRecepcion[LONG_BUFFER];
-int nBytes;
+unsigned char receiveBuffer[LONG_BUFFER];
+int bytesRead;
 
 int serialInit(int newCOM){
     COMPort = newCOM;
@@ -25,19 +24,25 @@ int serialInit(int newCOM){
 }
 
 int sendCommand(char command){
-    //Envía un byte sobre el puerto COM elegido
+    // Envia un byte por el puerto serie seleccionado.
     return RS232_SendByte(COMPort, command);
 }
 
 int readResponse(){
-    //Lee los datos almacenados en el buffer del puerto COM y los guarda en bufferRecepcion
-    //Devuelve la cantidad de bytes leídos
-    nBytes = RS232_PollComport(COMPort, bufferRecepcion, LONG_BUFFER-1);
+    // Lee los datos del puerto serie y los guarda en receiveBuffer.
+    // Devuelve cero si se recibieron datos y uno si ocurrio un error.
+    bytesRead = RS232_PollComport(COMPort, receiveBuffer, LONG_BUFFER-1);
 
-    if(nBytes > 0)
+    if(bytesRead > 0)
     {
-        bufferRecepcion[nBytes] = 0;   // Poner un NULL al final del string
-        printf("Se recibieron %i bytes: %s\n", nBytes, (char *)bufferRecepcion);
+        receiveBuffer[bytesRead] = 0;   // Terminar la respuesta como cadena.
+        printf("Se recibieron %i bytes: %s\n", bytesRead, (char *)receiveBuffer);
+
+        // La respuesta de voltaje comienza con V y contiene el valor en voltios.
+
+        // receiveBuffer[0] = "K" o "V".
+        // Desde receiveBuffer[0] hasta receiveBuffer[bytesRead] esta el valor.
+
         return 0; //OK
     }
     return 1; //Error

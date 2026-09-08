@@ -1,32 +1,39 @@
 //================== Inclusiones =============================
 #include "../include/uart.h"
+#include "../include/temperature.h"
 
 //================== Definiciones =============================
 #define LED LED_BUILTIN
 
 //================== Variables globales =============================
-String datosRecibidos;
+String receivedData;
 
 void uartInit() {
-    Serial.begin(115200);   //Inicializa el puerto  serie a 115200 baudios
+    Serial.begin(115200);   // Inicializa el puerto serie a 115200 baudios.
     pinMode(LED,OUTPUT);
     digitalWrite(LED, LOW );
 }
 
 void uartReadCommand(){
-    if(Serial.available()>0)      //Procede a la lectura solo si hay datos disponibles en el buffer
+    if(Serial.available()>0)      // Lee solo cuando hay datos disponibles en el buffer.
     {
-        datosRecibidos = Serial.readString();
+        receivedData = Serial.readString();
 
-        if(datosRecibidos == "E")   //Si el comando recibido es E enciende el led, si es A lo apaga
+        if(receivedData == "E")   // El comando E enciende el LED y A lo apaga.
         {
-            Serial.print("OK");
+            Serial.print("K");
             digitalWrite(LED, HIGH);
         }
-        else if(datosRecibidos == "A")
+        else if(receivedData == "A")
         {
-            Serial.print("OK");
+            Serial.print("K");
             digitalWrite(LED, LOW);
+        }
+        else if(receivedData == "V")
+        {
+            Serial.print("V");
+            float voltage = readVoltage();
+            Serial.print(voltage);
         }
         else
         {
